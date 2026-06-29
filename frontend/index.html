@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World News Clipper - 글로벌 경제/외교 인사이트</title>
+    <meta name="description" content="전 세계 100대 매체의 핵심 뉴스를 큐레이션하여 제공합니다.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="styles.css?v=22">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header header-container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🌍</span>
+                    <h1>World News Clipper</h1>
+                </div>
+                <div class="header-controls">
+                    <input type="text" id="datePicker" class="date-picker" placeholder="Select Date">
+                </div>
+                <div class="header-actions">
+                    <button id="triggerBtn" class="btn btn-primary" title="새로운 뉴스 수집">
+                        수동 업데이트
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        
+    <!-- Progress Bar UI (Initially Hidden) -->
+    <div id="progressContainer" class="progress-container" style="display: none;">
+        <div class="progress-status">
+            <span id="progressMessage">뉴스 수집을 준비 중입니다...</span>
+            <span id="progressTime" class="progress-time">남은 시간: 계산 중</span>
+        </div>
+        <div class="progress-bar-bg">
+            <div id="progressBar" class="progress-bar-fill"></div>
+        </div>
+        <div id="progressPercent" class="progress-percent">0%</div>
+    </div>
+
+    <div id="newsGrid" class="news-grid">
+            <!-- News cards will be dynamically injected here -->
+        </div>
+
+        <!-- Detail View -->
+        <div id="newsDetail" class="news-detail" style="display: none;">
+            <button id="backBtn" class="btn btn-outline back-btn">&larr; 목록으로 돌아가기</button>
+            
+            <h2 id="detailTitle" class="detail-title">뉴스 제목</h2>
+            <div id="detailSummary" class="detail-summary">
+                뉴스 요약 내용...
+            </div>
+            <div id="detailSource" class="news-source" style="display: none;"></div>
+            
+            <div class="detail-footer">
+                <a id="detailLink" href="#" target="_blank" class="btn btn-primary">원문 기사 보러가기</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="app.js?v=22"></script>
+</body>
+</html>
