@@ -9,7 +9,7 @@ def run_ai_analysis(news_items):
     api_key = os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY")
     if not api_key:
         print("GOOGLE_API_KEY not set. Using dummy data for testing.")
-        return generate_dummy_news(news_items)
+        return []
         
     client = genai.Client(api_key=api_key)
     current_year = datetime.now().year
@@ -73,7 +73,7 @@ def run_ai_analysis(news_items):
         except Exception as e:
             print(f"Stage 1 error: {e}")
             if attempt == max_retries - 1:
-                return generate_dummy_news(news_items)
+                return []
             time.sleep(10)
             
     # STAGE 2: Full text processing for selected candidates
@@ -135,7 +135,7 @@ def run_ai_analysis(news_items):
         except Exception as e:
             print(f"Stage 2 error: {e}")
             if attempt == max_retries - 1:
-                return generate_dummy_news(news_items)
+                return []
             time.sleep(10)
     
     processed_news = []
