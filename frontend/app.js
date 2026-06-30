@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     let availableDates = [];
     try {
-        const resp = await fetch('/api/available-dates');
+        const resp = await fetch(`/api/available-dates?t=${new Date().getTime()}`);
         const data = await resp.json();
         if (data.status === 'success') {
             availableDates = data.data;
@@ -142,7 +142,7 @@ async function fetchNews(date) {
     grid.innerHTML = '<div class="loading">뉴스를 불러오는 중입니다...</div>';
     
     try {
-        const response = await fetch(`/api/news?date=${date}`);
+        const response = await fetch(`/api/news?date=${date}&t=${new Date().getTime()}`);
         const data = await response.json();
         
         if (data.status === 'success') {
