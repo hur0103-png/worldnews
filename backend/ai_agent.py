@@ -6,7 +6,7 @@ from datetime import datetime
 from google import genai
 
 def run_ai_analysis(news_items):
-    api_key = os.environ.get("GOOGLE_API_KEY")
+    api_key = os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY")
     if not api_key:
         print("GOOGLE_API_KEY not set. Using dummy data for testing.")
         return generate_dummy_news(news_items)
