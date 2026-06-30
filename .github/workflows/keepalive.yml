@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping Render Server
-        run: curl -s https://worldnews-kira.onrender.com/api/progress > /dev/null || exit 0
+        run: curl -s https://worldnews-clipper.onrender.com/api/progress > /dev/null || exit 0
