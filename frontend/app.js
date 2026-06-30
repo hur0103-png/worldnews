@@ -242,3 +242,14 @@ function closeDetail() {
     document.getElementById('newsGrid').style.display = 'flex';
     window.scrollTo(0, savedScrollY);
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('admin') === '1') {
+        const triggerBtn = document.getElementById('triggerBtn');
+        if (triggerBtn) {
+            triggerBtn.style.display = 'inline-block';
+        }
+    }
+});
