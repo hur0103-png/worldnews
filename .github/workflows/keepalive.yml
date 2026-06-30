@@ -10,5 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping Render Server
-        # 아래 URL의 주소를 Render에서 발급받은 실제 주소로 반드시 변경하세요!
-        run: curl -s https://worldnews-clipper.onrender.com/api/progress > /dev/null || exit 0
+        run: curl -s https://worldnews.onrender.com/api/progress > /dev/null || exit 0
